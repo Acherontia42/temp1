@@ -20,14 +20,14 @@ void recover_password(Node *nodes, char vault[][COLS], int len, char *out)
     
     int length = 0;
     //iterating over nodes
-    for(int i = 0; i < len, i++)
+    for(int i = 0; i < len; i++)
     {
         if(nodes[i].valid != 0 && nodes[i].contributes != 0)
         {
             //byte pointer to start of node
             unsigned char  *base = (unsigned char *)&nodes[i];
             //add displacement
-            unsigned char col = *(base + nodes[i].col _disp);
+            unsigned char col = *(base + nodes[i].col_disp);
             //grab the char from the vault add to the out array
             out[nodes[i].position] = vault[nodes[i].row_index][col];
             length++;
